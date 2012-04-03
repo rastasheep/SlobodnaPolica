@@ -1,2 +1,11 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<h1>Knjige:</h1>
+<ul>
+	<% for book in @books %>
+		<li>
+			<%= book.title + '-' + book.author + ' :: ' + book.info %>
+			| <%= link_to 'Izmeni', edit_book_path(book) %>
+			| <%= link_to 'Obriši', book, :method => 'delete' %>
+		</li>
+		
+	<% end %>
+</ul>

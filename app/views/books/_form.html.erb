@@ -1,0 +1,11 @@
+ <%= form_for @book do |f| %>
+ 	<%= f.label :Naslov %>
+ 	<%= f.text_field :title %>
+ 	<%= f.label :Autor %>
+ 	<%= f.text_field :author %>
+ 	<%= f.label :Informacije %>
+ 	<%= f.text_field :info %>
+ 	<%= f.label :Link %>
+ 	<%= f.text_field :webpage %>
+ 	<%= f.submit %>
+ <% end %>	
