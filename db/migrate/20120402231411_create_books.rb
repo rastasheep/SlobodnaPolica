@@ -5,7 +5,7 @@ class CreateBooks < ActiveRecord::Migration
       t.text :info
       t.string :author
       t.string :webpage
-
+      
       t.timestamps
     end
   end

@@ -1,4 +1,4 @@
-!Slobodna polica
+# Slobodna polica
 
 This is my first "real" web app.
 Project that collects open source books.

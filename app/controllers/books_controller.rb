@@ -1,7 +1,10 @@
 class BooksController < ApplicationController
   def index
-  	@book = Book.new
   	@books = Book.all
+  end
+
+  def new
+    @book = Book.new
   end
 
   def show
@@ -9,8 +12,13 @@ class BooksController < ApplicationController
   end
 
   def create
-  	Book.create params[:book]
-  	redirect_to books_path
+  	@book = Book.create params[:book]
+    if @book.valid?
+      redirect_to books_path, :notice => 'Uspeno dodata knjiga!'
+    else
+      flash[:notice] = 'Doslo je do greske! Popunite obavezna polja.'
+      render :new 
+    end   
   end
 
   def edit
