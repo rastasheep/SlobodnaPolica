@@ -5,10 +5,12 @@
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
   <![endif]-->
+<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
@@ -26,14 +28,14 @@
       </a>
  
       <!-- Be sure to leave the brand out there if you want it shown -->
-      <a class="brand" href="#">Slobodna polica</a>
+      <%= link_to "Slobodna polica", root_path, :class => "brand" %>
  
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse">
              <ul class="nav">
             	<li><%= link_to "Kategorije" %></li>
-            	<li><%= link_to "Dodaj" %></li>
-            	<li><%= link_to "O proektu" %></li>
+            	<li><%= link_to "Dodaj", new_book_path %></li>
+            	<li><%= link_to "O proektu", '#about', :data => {:toggle=>"modal"} %></li>
           </ul>
       </div>
  
@@ -44,11 +46,21 @@
 <% flash.each do |name, massage| %>
   <div class="alert">
     <a class="close" data-dismiss="alert">×</a>
-    <strong>Obaveštenje:</strong> <%=  massage%>
+    <span class="badge badge-warning">Obaveštenje</span> <%=  massage%>
   </div>	
 <% end %>
 
 <%= yield %>
+
+<div class="modal fade" id="about">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3>Modal header</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+</div>
 
 </body>
 </html>
