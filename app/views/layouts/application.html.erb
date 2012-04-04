@@ -10,7 +10,7 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
@@ -28,17 +28,20 @@
       </a>
  
       <!-- Be sure to leave the brand out there if you want it shown -->
-      <%= link_to "Slobodna polica", root_path, :class => "brand" %>
+      <%= link_to "Slobodna polica", root_path, :class => "brand span2" %>
  
       <!-- Everything you want hidden at 940px or less, place within here -->
-      <div class="nav-collapse">
+      <div class="nav-collapse span9">
              <ul class="nav">
             	<li><%= link_to "Kategorije" %></li>
             	<li><%= link_to "Dodaj", new_book_path %></li>
-            	<li><%= link_to "O proektu", '#about', :data => {:toggle=>"modal"} %></li>
-          </ul>
+            	<li><%= link_to "O projektu", '#about', :data => {:toggle=>"modal"} %></li>
+            </ul>
+              <form class="navbar-search span2 offset3">
+             <input type="text" class="search-query" placeholder="Pretraga">
+      </form>
       </div>
- 
+
     </div>
   </div>
 </div>
