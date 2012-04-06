@@ -1,0 +1,30 @@
+<div class="modal fade" id="about">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3>O policama..</h3>
+  </div>
+  <div class="modal-body">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+</div>
+
+<div class="modal fade" id="categories">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3>Kategorije:</h3>
+  </div>
+  <div class="modal-body">
+    <p>
+      <ul>
+        <% for category in categories %>
+        <li><%= link_to category %></li>
+        <% end %>
+      </ul> 
+    </p>
+  </div>
+</div>
