@@ -14,7 +14,7 @@ class BooksController < ApplicationController
   def create
   	@book = Book.create params[:book]
     if @book.valid?
-      redirect_to books_path, :notice => 'Uspeno dodata knjiga!'
+      redirect_to root_path, :notice => 'Uspeno dodata knjiga!'
     else
       flash[:notice] = 'Doslo je do greske! Popunite obavezna polja.'
       render :new 

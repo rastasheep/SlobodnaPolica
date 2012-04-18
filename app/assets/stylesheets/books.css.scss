@@ -4,7 +4,7 @@
 
 @import "bootstrap";
 
-body { padding: 60px}
+body { padding-top: 60px}
 
 @import 'bootstrap-responsive';
 
@@ -19,4 +19,14 @@ body { padding: 60px}
 .navbar-search .search-query:focus, .navbar-search .search-query.focused {
     padding-left: 30px;
     background-position: 13px 9px;
+}
+
+.book{
+	padding-bottom:40px;
+}
+.book-adm, .link{
+	margin-top: 10px;
+}
+.link{
+	text-align: center;
 }

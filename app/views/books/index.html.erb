@@ -1,11 +1,31 @@
-<h1>Knjige:</h1>
-<ul>
-	<% for book in @books %>
-		<li>
-			<%= book.title + '-' + book.author + ' :: ' + book.info %>
-			| <%= link_to 'Izmeni', edit_book_path(book) %>
-			| <%= link_to 'Obriši', book, :method => 'delete' %>
-		</li>
-		
-	<% end %>
-</ul>
+<% for book in @books %>
+<div class="book span6">
+      <div class="row-fluid">
+        <div class="span12">
+          <div class="row-fluid">
+            <div class="span6">
+				<%= link_to book, :class=> 'thumbnail' do %>
+				  <%= image_tag('http://placehold.it/180x200') %>
+				<% end %>
+            </div>
+            <div class="span6">
+            	<h3><%= link_to book.title, book%></h3>
+            	<h4>Autor:</h4><p><%= book.author%></p>
+            	<div class="desc"><%= truncate(book.info, :length => 143, :separator => ' ')%><%= link_to 'saznaj više>', book%></div>
+            	<pre class="link"><i class=" icon-bookmark"></i><%= link_to 'Veb stranica', book.webpage%></pre>
+            </div>
+          </div>
+          <div class="book-adm row-fluid">
+	      	<div class="span6">
+	      		<%= link_to 'Izmeni', edit_book_path(book),:class => 'btn pull-right' %>
+	      	</div>
+	    	<div class="span6">
+	    		<%= link_to 'Obriši', book, :method => 'delete', :class =>'btn btn-danger' %>
+	    	</div>
+          </div>
+        </div>
+      </div>
+</div>
+<% end %>
+
+
