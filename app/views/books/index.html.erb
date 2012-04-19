@@ -5,7 +5,8 @@
           <div class="row-fluid">
             <div class="span6">
 				<%= link_to book, :class=> 'thumbnail' do %>
-				  <%= image_tag('http://placehold.it/180x200') %>
+				<%= image_tag book.image_url(:thumb).to_s %>
+
 				<% end %>
             </div>
             <div class="span6">
@@ -21,11 +22,9 @@
 	      	</div>
 	    	<div class="span6">
 	    		<%= link_to 'Obriši', book, :method => 'delete', :class =>'btn btn-danger' %>
-	    	</div>
+	    	</div>	 
           </div>
         </div>
       </div>
 </div>
 <% end %>
-
-
