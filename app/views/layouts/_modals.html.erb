@@ -1,7 +1,7 @@
 <div class="modal fade" id="about">
   <div class="modal-header">
     <a class="close" data-dismiss="modal">×</a>
-    <h3>O policama..</h3>
+    <h2>O policama..</h2>
   </div>
   <div class="modal-body">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -16,16 +16,29 @@
 <div class="modal fade" id="categories">
   <div class="modal-header">
     <a class="close" data-dismiss="modal">×</a>
-    <h3>Kategorije:</h3>
-  </div>
-  <div class="modal-body">
-    <p>
-      <ul>
-        <% for category in categories %>
-        <li><%= link_to category, root_path(:search => category) %></li>
-
-        <% end %>
-      </ul> 
-    </p>
-  </div>
+    &nbsp;
+  </div>  
+    <div class="modal-body">
+      <h2 class="span6">Jezik:</h2>
+        <ul>
+          <li class="span2"><%= link_to 'srpski', root_path(:search => 'srpski' ) %></li>
+          <li class="span2"><%= link_to 'engleski', root_path(:search => 'engleski' ) %></li>
+        </ul> 
+      <h2 class='span6'>Kategorije:</h2>
+      <p>
+        <ul>
+          <% for category in categories %>
+          <li class="span2"><%= link_to category, root_path(:search => category) %></li>
+          <% end %>
+        </ul> 
+      </p>
+      <h2 class='span6'>Autori:</h2>
+      <p>
+        <ul>
+          <% for author in authors %>
+          <li class="span2"><%= link_to author, root_path(:search => author) %></li>
+          <% end %>
+        </ul> 
+      </p>
+    </div>
 </div>

@@ -1,11 +1,10 @@
 class BooksController < ApplicationController
     def index
-    if !params[:search].blank?
-  	 @books = Book.search_by_book( params[:search] )
-    else
-      @books = Book.all
-
-    end
+      if !params[:search].blank?
+    	 @books = Book.search_by_book( params[:search] )
+      else
+        @books = Book.all
+      end
   end
 
   def new

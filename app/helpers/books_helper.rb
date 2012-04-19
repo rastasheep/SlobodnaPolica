@@ -10,4 +10,7 @@ module BooksHelper
 		end
 		return ad.sort!
 	end
+	def authors
+		auths = Book.select('distinct author').collect(&:author)
+	end
 end

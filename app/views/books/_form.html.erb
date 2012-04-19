@@ -2,7 +2,7 @@
  	<%= f.label :Naslov %>
  	<%= f.text_field :title %>
  	<%= f.label :Autor %>
- 	<%= f.text_field :author %>
+ 	<%= f.text_field :author, :data => {:provide=> 'typeahead'}, :autocomplete => 'off' %>
  	<%= f.label :Informacije %>
  	<%= f.text_field :info, :class => ' thumbnails span4 ' %>
 

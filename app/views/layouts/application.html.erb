@@ -18,6 +18,8 @@
         jQuery(document).ready(function() {
             var allCat = [<% for category in categories %>"<%= category %>",<% end %>];
             $('#book_categories').typeahead({source: allCat});
+            var allAuth = [<% for author in authors %>"<%= author %>",<% end %>];
+            $('#book_author').typeahead({source: allAuth});
         });
     </script>
 <body>
