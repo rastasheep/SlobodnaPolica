@@ -25,6 +25,8 @@ gem 'bootstrap-sass', '~> 2.0.2'
 gem "rmagick"
 gem "carrierwave"
 
+gem 'pg_search'
+	
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -7,4 +7,10 @@ class Book < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  include PgSearch
+pg_search_scope :search_by_book, 
+				:against => [:author, :info, :title, :lang, :categories],
+                :using => {
+                    :tsearch => {:prefix => true, :any_word => true}
+                  }
 end

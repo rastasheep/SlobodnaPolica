@@ -22,7 +22,8 @@
     <p>
       <ul>
         <% for category in categories %>
-        <li><%= link_to category %></li>
+        <li><%= link_to category, root_path(:search => category) %></li>
+
         <% end %>
       </ul> 
     </p>
