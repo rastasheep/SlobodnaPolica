@@ -5,19 +5,26 @@
  	<%= f.text_field :author %>
  	<%= f.label :Informacije %>
  	<%= f.text_field :info, :class => ' thumbnails span4 ' %>
-	<p>
-	  <%= f.file_field :image %>
-	</p>
-	<p>
-	  <%= f.label :remote_image_url, "or image URL" %><br />
-	  <%= f.text_field :remote_image_url %>
-	  </p>
+
+<!-- upload img -->
+	<%= f.file_field :image %>
+	<%= f.label :remote_image_url, "ili URL" %><br />
+	<%= f.text_field :remote_image_url %>
+
  	<%= f.label :Kategorija %>
  	<%= f.text_field :categories, :data => {:provide=> 'typeahead'}, :autocomplete => 'off' %>
  	<%= f.label :Jezik %>
 	<%= f.select :lang, ["Srpski","Engleski"] %>
  	<%= f.label :Link %>
  	<%= f.text_field :webpage %>
+
+
+<!-- remove img if exists -->
+	<% if @book.image.to_s != 'default.gif'%>
+		  <%= f.label :remove_image, "Uklonite sliku" %><br />
+		  <%= f.check_box :remove_image %>
+	<% end %>
+
  	<%= f.submit %>
  <% end %>	
 

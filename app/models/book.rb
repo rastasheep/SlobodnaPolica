@@ -1,5 +1,5 @@
 class Book < ActiveRecord::Base
-  attr_accessible :author, :info, :title, :webpage, :lang, :categories, :image, :remote_image_url
+  attr_accessible :author, :info, :title, :webpage, :lang, :categories, :image, :remote_image_url, :remove_image
   validates :author, presence: true 
   validates :info, presence: true 
   validates :title, presence: true
