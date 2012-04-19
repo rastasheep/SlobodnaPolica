@@ -1,7 +1,13 @@
 class BooksController < ApplicationController
     def index
       if !params[:search].blank?
-    	 @books = Book.search_by_book( params[:search] )
+    	 books = Book.search_by_book( params[:search] )
+        if books.empty?
+         flash[:info] = 'Nema rezultata pretrage. Molimo vas pokusajte ponovo.'
+         redirect_to root_path
+        else
+         @books = books
+       end
       else
         @books = Book.all
       end
@@ -18,9 +24,10 @@ class BooksController < ApplicationController
   def create
   	@book = Book.create params[:book]
     if @book.valid?
-      redirect_to root_path, :notice => 'Uspeno dodata knjiga!'
+      flash[:success] = 'Uspeno dodata knjiga!'
+      redirect_to root_path
     else
-      flash[:notice] = 'Doslo je do greske! Popunite obavezna polja.'
+      flash[:error] = 'Doslo je do greske! Popunite obavezna polja.'
       render :new 
     end   
   end
@@ -32,14 +39,17 @@ class BooksController < ApplicationController
   def update
   	book =  Book.find params[:id]
   	if book.update_attributes params[:book]
-  		redirect_to books_path, :notice => 'Uspeno izmenjena knjiga!'
+      flash[:success] = 'Uspeno izmenjena knjiga!'
+  		redirect_to books_path
   	else
-  		redirect_to :back, :notice => 'Doslo je do greske! Popunite obavezna polja.'
+  		flash[:error] = 'Doslo je do greske! Popunite obavezna polja.'
+      redirect_to :back
   	end		
   end
 
   def destroy
   	Book.destroy params[:id]
-  	redirect_to books_path, :notice => 'Uspeno izbrisana knjiga!'
+    flash[:success] = 'Uspeno izbrisana knjiga!'
+  	redirect_to books_path
   end
 end

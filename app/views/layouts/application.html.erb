@@ -28,9 +28,9 @@
 
 
 <% flash.each do |name, massage| %>
-  <div class="alert">
+  <div class="alert <%= "alert-"+name.to_s %>">
     <a class="close" data-dismiss="alert">×</a>
-    <span class="badge badge-warning">Obaveštenje:</span> <%=  massage%>
+    <span class="badge <%= "badge-"+name.to_s %>">Obaveštenje:</span> <%=  massage%>
   </div>	
 <% end %>
 
