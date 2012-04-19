@@ -31,3 +31,13 @@ body { padding-top: 60px}
 .link{
 	text-align: center;
 }
+
+
+/*media queries*/
+@media (max-width: 768px) { 
+    .book{
+        height: 100%;
+
+    }
+
+}

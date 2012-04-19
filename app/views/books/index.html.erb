@@ -11,7 +11,10 @@
             <div class="span6">
             	<h3><%= link_to book.title, book%></h3>
             	<h4>Autor:</h4><p><%= book.author%></p>
-            	<div class="desc"><%= truncate(book.info, :length => 143, :separator => ' ')%><%= link_to 'saznaj više>', book%></div>
+            	<div class="desc">
+            		<%= truncate(book.info, :length => 143, :separator => ' ')%>
+            		<p><%= link_to 'saznaj više >', book%></p>
+            	</div>
             	<pre class="link"><i class=" icon-bookmark"></i><%= link_to 'Veb stranica', book.webpage%></pre>
             </div>
           </div>
