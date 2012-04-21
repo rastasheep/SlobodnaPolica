@@ -1,24 +1,24 @@
 class BooksController < ApplicationController
-    def index
-      if !params[:search].blank?
-    	 books = Book.search_by_book( params[:search] )
-        if books.empty?
-         flash[:info] = 'Nema rezultata pretrage. Molimo vas pokusajte ponovo.'
-         redirect_to root_path
-        else
-         @books = books
-       end
-      else
-        @books = Book.all
+  def index
+    if !params[:search].blank?
+  	 books = Book.search_by_book( params[:search] )
+      if books.empty?
+        flash[:info] = 'Nema rezultata pretrage. Molimo vas pokusajte ponovo.'
+        redirect_to root_path
+       else
+        @books = books
       end
+    else
+      @books = Book.all
+    end
+  end
+
+  def show
+    @book = Book.find params[:id]   
   end
 
   def new
     @book = Book.new
-  end
-
-  def show
-    @book = Book.find params[:id] 	
   end
 
   def create
