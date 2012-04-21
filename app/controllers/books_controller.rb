@@ -9,7 +9,7 @@ class BooksController < ApplicationController
         @books = books
       end
     else
-      @books = Book.all
+      @books = Book.order('created_at DESC').all
     end
   end
 
