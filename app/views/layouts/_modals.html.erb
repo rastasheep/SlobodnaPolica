@@ -26,7 +26,7 @@
       <h2 class='span6'>Kategorije:</h2>
       <p>
         <ul>
-          <% for category in categories %>
+          <% for category in @cat %>
           <li class="span2"><%= link_to category, root_path(:search => category) %></li>
           <% end %>
         </ul> 
@@ -34,7 +34,7 @@
       <h2 class='span6'>Autori:</h2>
       <p>
         <ul>
-          <% for author in authors %>
+          <% for author in @auth %>
           <li class="span2"><%= link_to author, root_path(:search => author) %></li>
           <% end %>
         </ul> 

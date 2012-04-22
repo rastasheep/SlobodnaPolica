@@ -1,16 +1,16 @@
 module BooksHelper
 	def categories
-		ad = Array.new
+		@cat = Array.new
 		categories = Book.select('distinct categories').collect(&:categories)
-		for cat in categories
-			if cat.nil?
-				cat = "Bez kategorije"
+		for category in categories
+			if category.nil?
+				category = "Bez kategorije"
 			end
-			ad<<cat
+			@cat<<category
 		end
-		return ad.sort!
+		@cat.sort!
 	end
 	def authors
-		auths = Book.select('distinct author').collect(&:author)
+		@auth = Book.select('distinct author').collect(&:author)
 	end
 end

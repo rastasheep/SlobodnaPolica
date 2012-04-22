@@ -6,10 +6,10 @@ class BooksController < ApplicationController
         flash[:info] = 'Nema rezultata pretrage. Molimo vas pokusajte ponovo.'
         redirect_to root_path
        else
-        @books = books
+        @books = books.paginate(:page => params[:page], :per_page => 10)
       end
     else
-      @books = Book.order('created_at DESC').all
+      @books = Book.paginate(:page => params[:page], :per_page => 10).order('created_at DESC')
     end
   end
 
