@@ -48,6 +48,11 @@ overflow: hidden;
     text-align: justify;
 }
 
+.content{
+    overflow: hidden;
+    margin-left: 20px;
+}
+
 /* Navbar*/
 .brand {
     font-family: 'Pacifico', cursive;
@@ -124,6 +129,9 @@ display: none !important;
     }
     .book-img>.row>.thumbnail{
         width: 100%;
+    }
+    .content {
+        margin: auto;
     }
 }
 @media (max-width:768px) { 

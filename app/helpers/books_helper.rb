@@ -10,7 +10,7 @@ module BooksHelper
 		@cat = Array.new
 		categories = Book.select('distinct categories').collect(&:categories)
 		for category in categories
-			if category.nil?
+			if category.empty?
 				category = "Bez kategorije"
 			end
 			@cat<<category

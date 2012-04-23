@@ -7,7 +7,7 @@ class Book < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
-before_validation :smart_add_url_protocol
+before_save :smart_add_url_protocol
 
 protected
 

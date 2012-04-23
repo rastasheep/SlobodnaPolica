@@ -1,41 +1,43 @@
 <% title @book.title + " | Slobodna polica" %>
 
-<div class="container row">
-	<div class="row">
-		<div class="span8 book-heading">
-				<h1><%= @book.title%></h1>
-				<h3>Autor:&nbsp;<%= link_to @book.author, root_path(:search => @book.author )%></h3>
-				<div class="row">
-					<div class="span8">
-						<h3>Kategorija:&nbsp;<%= link_to @book.categories, root_path(:search => @book.categories)%></h3>
+<div class="row">
+	<div class="container">
+		<div class="row">
+			<div class="span8 book-heading">
+					<h1><%= @book.title%></h1>
+					<h3>Autor:&nbsp;<%= link_to @book.author, root_path(:search => @book.author )%></h3>
+					<div class="row">
+						<div class="span8">
+							<h3>Kategorija:&nbsp;<%= link_to @book.categories, root_path(:search => @book.categories)%></h3>
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="span8">
-						<h3><%= link_to @book.lang, root_path(:search => @book.lang)%>&nbsp;jezik</h3>
+					<div class="row">
+						<div class="span8">
+							<h3><%= link_to @book.lang, root_path(:search => @book.lang)%>&nbsp;jezik</h3>
+						</div>
 					</div>
+			</div>
+			<div class="span4 book-img">
+				<div class="row">
+					<%= image_tag @book.image_url.to_s, :class=> 'thumbnail' %>
 				</div>
-		</div>
-		<div class="span4 book-img">
-			<div class="row">
-				<%= image_tag @book.image_url.to_s, :class=> 'thumbnail' %>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="span12 txt-box">
+				<div class="row">
+						<div class="span10 offset1"><p><%= @book.info%></p></div>
+				</div>
 			</div>
 		</div>
-	</div>	
-	<div class="row">
-		<div class="span12 txt-box">
-			<div class="row">
-					<div class="span10 offset1"><p><%= @book.info%></p></div>
+		<div class="row">
+			<div class="span12">
+				<div class="row">
+					<div class="span4 offset4"><pre class="link"><i class=" icon-bookmark"></i><%= link_to @book.webpage, @book.webpage%></pre></div>
+				</div>
 			</div>
 		</div>
+		<%= render 'share'%>
+		<%= render 'comments'%>
 	</div>
-	<div class="row">
-		<div class="span12">
-			<div class="row">
-				<div class="span4 offset4"><pre class="link"><i class=" icon-bookmark"></i><%= link_to @book.webpage, @book.webpage%></pre></div>
-			</div>
-		</div>
-	</div>
-	<%= render 'share'%>
-	<%= render 'comments'%>
 </div>
