@@ -9,13 +9,8 @@ module BooksHelper
 	def categories
 		@cat = Array.new
 		categories = Book.select('distinct categories').collect(&:categories)
-		for category in categories
-			if category.empty?
-				category = "Bez kategorije"
-			end
-			@cat<<category
-		end
-		@cat.sort!
+		categories = categories.collect{|x| x.split(",")}.flatten!.collect{|x| x.strip.downcase}.uniq!
+		@cat=categories.sort!
 	end
 	def authors
 		@auth = Book.select('distinct author').collect(&:author).sort!
