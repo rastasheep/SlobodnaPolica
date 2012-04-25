@@ -28,14 +28,16 @@
             	<pre class="link"><i class=" icon-bookmark"></i><%= link_to 'Veb stranica', book.webpage%></pre>
             </div>
           </div>
+          <% if admin? %>
           <div class="book-adm row-fluid">
-	      	<div class="span6">
-	      		<%= link_to 'Izmeni', edit_book_path(book),:class => 'btn pull-right' %>
-	      	</div>
-	    	<div class="span6">
-	    		<%= link_to 'Obriši', book, :method => 'delete', :class =>'btn btn-danger' %>
-	    	</div>	 
+  	      	<div class="span6">
+  	      		<%= link_to 'Izmeni', edit_book_path(book),:class => 'btn pull-right' %>
+  	      	</div>
+    	    	<div class="span6">
+    	    		<%= link_to 'Obriši', book, :method => 'delete', :class =>'btn btn-danger' %>
+    	    	</div>	 
           </div>
+          <% end %>
         </div>
       </div>
 </div>

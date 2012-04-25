@@ -1,0 +1,14 @@
+<div class="container">
+	<%= form_tag sessions_path, :class=>"form-horizontal"  do  %>
+	  <fieldset>
+	    <legend>Dobrodošli, unesite šifru za pristup administratorskom delu</legend>
+	    <div class="control-group">
+	      <%= label :password, "Unesite sifru", :class=>"control-label" %>
+	      <div class="controls">
+	        <%= password_field_tag  :password, params[:password], :class=>"input-xlarge" %>
+	        <p class="help-block">Ukoliko niste administrator, molimo vas pređite na <%= link_to "početnu stranu", root_path %>, hvala!</p>
+	      </div>
+	    </div>
+	  </fieldset>
+	<% end %>
+</div>

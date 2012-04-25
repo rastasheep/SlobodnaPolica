@@ -1,4 +1,8 @@
 SlobodnaPolica::Application.routes.draw do
+  get "sessions/new"
+
+  get "sessions/destroy"
+
   get "books/index"
 
   # The priority is based upon order of creation:
@@ -15,6 +19,10 @@ SlobodnaPolica::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   root :to => 'Books#index'
   resources :books
+  resources :sessions
+
+match "/login" => "sessions#new", :as => :login  
+match "/logout" => "sessions#destroy", :as => :logout  
 
   # Sample resource route with options:
   #   resources :products do

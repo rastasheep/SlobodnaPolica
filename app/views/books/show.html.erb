@@ -2,15 +2,17 @@
 
 <div class="row">
 	<div class="container">
-		<div class="row">
-			<div class="span12">
-				<div class="row">
-					<div class="span2 offset5">
-						<%= link_to 'Izmeni', edit_book_path, :class => 'btn pull-right' %>
-						<%= link_to 'Obriši', "#", :method => 'delete', :class =>'btn btn-danger' %></div>
+		<% if admin? %>
+			<div class="row">
+				<div class="span12">
+					<div class="row">
+						<div class="span2 offset5">
+							<%= link_to 'Izmeni', edit_book_path, :class => 'btn pull-right' %>
+							<%= link_to 'Obriši', "#", :method => 'delete', :class =>'btn btn-danger' %></div>
+					</div>
 				</div>
 			</div>
-		</div>
+		<% end%>
 		<div class="row">
 			<div class="span8 book-heading">
 					<h1><%= @book.title%></h1>

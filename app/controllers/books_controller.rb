@@ -1,4 +1,7 @@
 class BooksController < ApplicationController
+  before_filter :authorize, :except => [:index, :show, :new]
+
+
   def index
     if !params[:search].blank?
   	 books = Book.search_by_book( params[:search] )

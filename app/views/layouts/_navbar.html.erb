@@ -18,6 +18,9 @@
             	<li><%= link_to "Kategorije", '#categories', :data => {:toggle=>"modal"} %></li>
             	<li><%= link_to "Dodaj", new_book_path %></li>
             	<li><%= link_to "O projektu", '#about', :data => {:toggle=>"modal"} %></li>
+              <% if admin? %>
+                <li><%= link_to "Log out", logout_path %></li>
+              <% end %>
             </ul>
             <form action="/" method="get" class="navbar-search pull-right">
               <%= text_field_tag :search, params[:search], :class=>"search-query", :placeholder=>"Pretraga" %>
